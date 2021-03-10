@@ -6,7 +6,8 @@ import App from './App.vue';
 const store = createStore({
   state() {
     return {
-      counter: 0
+      counter: 0,
+      isAuth: false
     };
   },
   mutations: {
@@ -15,6 +16,14 @@ const store = createStore({
     },
     increase(state, payload) {
       state.counter = state.counter + payload.value;
+    },
+    login(state) {
+      state.isAuth = true;
+      console.log('ok');
+    },
+    logout(state) {
+      state.isAuth = false;
+      console.log('logout');
     }
   },
   actions: {
@@ -39,6 +48,9 @@ const store = createStore({
         return 100;
       }
       return finalCounter;
+    },
+    isAuthenticated(state) {
+      return state.isAuth;
     }
   }
 });
