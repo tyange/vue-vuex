@@ -19,14 +19,10 @@ const store = createStore({
   },
   actions: {
     increment(context) {
-      setTimeout(function() {
-        context.commit('increment');
-      }, 2000);
+      context.commit('increment');
     },
     increase(context, payload) {
-      setTimeout(function() {
-        context.commit('increase', payload);
-      }, 2000);
+      context.commit('increase', payload);
     }
   },
   getters: {
