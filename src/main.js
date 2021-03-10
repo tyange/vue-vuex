@@ -14,6 +14,7 @@ const counterModule = {
       state.counter = state.counter + 2;
     },
     increase(state, payload) {
+      console.log(state);
       state.counter = state.counter + payload.value;
     }
   },
@@ -26,6 +27,12 @@ const counterModule = {
     }
   },
   getters: {
+    // state in module is a local state. so, we can approch local state, 'counter',
+    // but we can't approch 'isLoggedIn' state in main store.
+    // This is reason for dosen't work below line.
+    // testAuth(state, getters, rootState, rootGetters) {
+    //   return state.isLoggedIn;
+    // },
     finalCounter(state) {
       return state.counter * 3;
     },
