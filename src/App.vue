@@ -29,7 +29,7 @@ export default {
     ChangeCounterdOne() {
       // this.$store.commit('increase', { value: 10 });
       this.$store.dispatch({
-        type: 'increment',
+        type: 'numbers/increment',
         value: 10
       });
     }
