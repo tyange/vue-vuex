@@ -23,8 +23,8 @@ export default {
   methods: {
     ChangeCounterdOne() {
       // this.$store.commit('increase', { value: 10 });
-      this.$store.commit({
-        type: 'increase',
+      this.$store.dispatch({
+        type: 'increment',
         value: 10
       });
     }
